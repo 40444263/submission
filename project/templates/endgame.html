@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Endgame</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='map.css') }}">
+  </head>
+  <body>
+    <div class="play">
+      <header>
+        <p>End of the game !</p>
+      </header>
+      <div class="list">
+        {% if 'Player1Win' == "true" %}
+          <p>Player 1 win</p>
+        {% else %}
+          <p>Player 2 win</p>
+        {% endif %}
+
+        <p>Number of hit player one : {{info.NbHitPlayer1}}</p>
+        <p>Number of hit player two : {{info.NbHitPlayer2}}</p>
+        <p>Time of the game : {{info.Time}}</p>
+
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="div_button2">
+        <button class="button2" type="button" name="return" onclick="window.location.href='{{ url_for( 'home')}}'">Return</button>
+      </div>
+    </footer>
+  </body>
+</html>

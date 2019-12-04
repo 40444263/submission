@@ -19,7 +19,7 @@ def creation_table(connect,creation_table):
         print(e)
         raise e
 def main():
-    path = r"\static\game.db"
+    path = r"static/game.db"
 
     table_game = """CREATE TABLE IF NOT EXISTS 'game'(
                 	'Name' TEXT(20) DEFAULT 'The web tech smash',
@@ -48,8 +48,7 @@ def main():
                     	'NbHitPlayer1' INT,
                     	'NbHitPlayer2' INT,
                     	'Time' INT,
-                    	'ID' INT NOT NULL,
-                    	PRIMARY KEY ('ID'));"""
+                    	'ID' INTEGER PRIMARY KEY AUTOINCREMENT);"""
 
     connection = create_connection(path)
 
